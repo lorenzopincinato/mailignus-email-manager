@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Mailignus: Gerenciador de E-Mails</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+
+		<link href="css/style.css" rel="stylesheet">
+
+	</head>
+	<body class="body-iframe">
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/script.js"></script>
+
+		<div class="panel panel-default center-div" style="width: 400px; height: 466px">
+			<div class="panel-heading" style="font-size: 18px; font-weight: bold">Cadastrar novo E-Mail</div>
+			<div class="panel-body">
+				<form action="cadastrar.jsp" method="post">
+					<div class="input-group" style="margin-bottom: 15px">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+						<input id="txtNovoEmail" name="txtNovoEmail" type="text" class="form-control" placeholder="E-Mail" required="required" maxlength="40">
+					</div>
+					<div class="input-group" style="margin-bottom: 20px">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+						<input id="txtSenha" name="txtSenha" type="password" class="form-control" placeholder="Senha" required="required" maxlength="30">
+					</div>
+					<div class="input-group" style="margin-bottom: 15px; width: 65%">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-transfer"></span></span>
+						<input id="txtServidorLeitura" name="txtServidorLeitura" type="text" class="form-control" placeholder="Servidor de Leitura" required="required" maxlength="40">
+					</div>
+					<div class="input-group" style="margin-bottom: 20px; width: 40%">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-sort-by-order"></span></span>
+						<input id="txtPortaLeitura" name="txtPortaLeitura" type="text" class="form-control" placeholder="Porta" required="required" maxlength="6">
+					</div>
+					<div class="input-group" style="margin-bottom: 15px; width: 65%">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-transfer"></span></span>
+						<input id="txtServidorSMTP" name="txtServidorSMTP" type="text" class="form-control" placeholder="Servidor SMTP" required="required" maxlength="40">
+					</div>
+					<div class="input-group" style="margin-bottom: 20px; width: 40%">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-sort-by-order"></span></span>
+						<input id="txtPortaSMTP" name="txtPortaSMTP" type="text" class="form-control" placeholder="Porta" required="required" maxlength="6">
+					</div>
+					<div style="margin-left: 5px">
+						<label class="radio-inline" style="margin-right: 56px;"><input type="radio" name="rbSSL" value="1" checked="checked">Com SSL</label>
+						<label class="radio-inline"><input type="radio" name="rbSSL" value="0">Sem SSL</label>
+					</div>
+					<input type="submit" value="Cadastrar" id="btnCadastrar" name="btnCadastrar" method="post" disabled="true" type="button" class="btn btn-parao" style="width: 368px; margin-top: 15px; height: 45px; font-size: 18px; font-weight: bold;"/>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

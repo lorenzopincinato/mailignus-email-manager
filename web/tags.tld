@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+  <tlib-version>1.0</tlib-version>
+  <jsp-version> 1.5 </jsp-version>
+  <short-name> Minhas tags </short-name>
+  <uri>/tags.tld</uri>
+  
+  <tag>
+      <name> Logar </name>
+      <tag-class> tag.TagLogar </tag-class>
+      <body-content> empty </body-content>
+      <attribute>
+          <name> email </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+      <attribute>
+          <name> senha </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name> Cadastrar </name>
+      <tag-class> tag.TagCadastrar </tag-class>
+      <body-content> empty </body-content>
+      <attribute>
+          <name> email </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+      <attribute>
+          <name> senha </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name> AlterarEmail</name>
+      <tag-class> tag.TagAlterarEmail </tag-class>
+      <body-content> empty </body-content>
+      <attribute>
+          <name> emailAntigo </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+      <attribute>
+          <name> emailNovo </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+      <attribute>
+          <name> senha </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name> AlterarSenha</name>
+      <tag-class> tag.TagAlterarSenha </tag-class>
+      <body-content> empty </body-content>
+      <attribute>
+          <name> email </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+      <attribute>
+          <name> senhaAntiga </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+      <attribute>
+          <name> senhaNova </name>
+          <type> java.util.String </type>
+          <required> true </required>
+          <rtexprvalue> true </rtexprvalue>
+      </attribute>
+  </tag>
+</taglib>
