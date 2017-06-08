@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="minha" uri="/tags.tld" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <body>
         <script src="js/jquery.js"></script>
         <script src="js/script.js"></script>
-        
+
         <minha:AlterarSenha email="${param.txtUsuario}" senhaAntiga="${param.txtSenha}" senhaNova="${param.txtNovaSenha}"/>
         <c:if test="${resultado.equals('alterou')}">
             <script>
