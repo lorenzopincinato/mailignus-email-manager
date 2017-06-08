@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Mailignus</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+
+		<link href="css/style.css" rel="stylesheet">
+
+		<link rel="prerender" href="entrar.html">
+		<link rel="prerender" href="cadastrar.html">
+		<link rel="prerender" href="alterarUsuario.html">
+		<link rel="prerender" href="alterarSenha.html">
+
+	</head>
+	<body class="body-principal">
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/script.js"></script>
+
+		<div class="background animated fadeIn">
+			<div id="meuDiv" class="center-div animated zoomIn" style="width: 320px; height: 362px;">
+				<img id="logoMailignus" class="animacao-logo" src="images/logo_low.png" style="height: 78px; margin-bottom: 7px">
+				<iframe name="meuFrame" id="meuFrame" src="entrar.html" scrolling="no" frameborder="0" style="width: 100%; height: 244px"></iframe>
+				<!--iframe name="meuFrame" id="meuFrame" src="entrar.html" scrolling="no" frameborder="0" style="width: 100%; height: 192px"></iframe-->
+			</div>
+		</div>
+		<script>
+			$(document).find("#meuDiv").hide();
+			$(document).find("#meuFrame").ready(function (){
+				$(document).find("#meuDiv").show();
+				$(document).find('#meuDiv').addClass('animated zoomIn').one('webkitAnimationEnd',
+					function() {
+						$(document).find('#meuDiv').removeClass('animated zoomIn');
+					});
+			});
+		</script>
+	</body>
+</html>

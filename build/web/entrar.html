@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Mailignus: Gerenciador de E-Mails</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+
+		<link href="css/style.css" rel="stylesheet">
+
+	</head>
+	<body class="body-iframe">
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/script.js"></script>
+
+		<div class="panel panel-default" style="margin-bottom: 0px">
+			<form action="entrar.jsp" method="post">
+				<div class="input-group" style="margin: 20px; margin-bottom: 15px">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+					<input id="txtUsuario" name="txtUsuario" type="text" class="form-control" placeholder="Usuário" required="required">
+				</div>
+				<div class="input-group" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+					<input id="txtSenha" name="txtSenha" type="password" class="form-control" placeholder="Senha" required="required">
+				</div>
+				<input type="submit" value="Entrar" id="btnEntrar" name="btnEntrar" method="post" disabled="true" type="button" class="btn btn-logar" style="width: 280px; height: 45px; margin-left: 20px; margin-right: 20px; font-size: 18px; font-weight: bold;"/>
+			</form>
+			<div style="margin-top: 3px; margin-bottom: 3px; font-size: 11px; text-align: center;">
+				<b><a onclick="paginaDestino('cadastrar.html')" id="txtCadastrar" class="text-link">Novo usuário?</a> -
+					 <a onClick="paginaDestino('alterarUsuario.html')" id="txtAlterar" class="text-link">Alterar usuário/senha</a></b>
+			</div>
+		</div>
+		<div class="umDiv" id="divAlerta"></div>
+		<script>
+                   /*$(function() {
+                        alertaErro.warning('LUL');
+                    })*/
+                    
+			$('#txtUsuario').on('keyup',function() {
+      	if (($('#txtUsuario').val().length > 13) && ($('#txtSenha').val().length > 7)) { $('#btnEntrar').prop("disabled", false); }
+				else { $('#btnEntrar').prop("disabled", true); }
+			});
+
+			$('#txtSenha').on('keyup',function() {
+				if (($('#txtUsuario').val().length > 13) && ($('#txtSenha').val().length > 7)) { $('#btnEntrar').prop("disabled", false); }
+				else { $('#btnEntrar').prop("disabled", true); }
+			});
+		</script>
+	</body>
+</html>

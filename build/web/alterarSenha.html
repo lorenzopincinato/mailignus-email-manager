@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Mailignus: Gerenciador de E-Mails</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+
+		<link href="css/style.css" rel="stylesheet">
+
+	</head>
+	<body class="body-iframe">
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/script.js"></script>
+
+		<div class="panel panel-default" style="margin-bottom: 0px">
+			<form id="meuForm" action="alterarSenha.jsp" method="post">
+				<div class="input-group" style="margin: 20px; margin-bottom: 15px">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+					<input id="txtUsuario" name="txtUsuario" type="text" class="form-control" placeholder="Usuário" required="required" maxlength="40">
+				</div>
+				<div class="input-group" style="margin-left: 20px; margin-right: 20px; margin-bottom: 15px">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+					<input id="txtSenha" name="txtSenha" type="password" class="form-control" placeholder="Senha" required="required" maxlength="20">
+				</div>
+        <div style="margin-left: 56px;">
+          <label class="radio-inline" style="margin-right: 56px;"><input type="radio" name="rbAlterar" value="chkUsuario">Usuário</label>
+          <label class="radio-inline"><input type="radio" name="rbAlterar" value="chkSenha" checked="checked">Senha</label>
+        </div>
+        <div class="input-group" style="margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 15px">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+          <input id="txtNovaSenha" name="txtNovaSenha" type="password" class="form-control" placeholder="Nova Senha" required="required" maxlength="20">
+        </div>
+				<div class="input-group" style="margin: 20px; margin-top: 0px">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+					<input id="txtNovaSenhaConfirmacao" name="txtNovaSenha2" type="password" class="form-control" placeholder="Confirmação de Senha" required="required" maxlength="20">
+				</div>
+				<input type="submit" value="Alterar" id="btnAlterar" name="btnAlterar" method="post" disabled="true" type="button" class="btn btn-logar" style="width: 280px; height: 45px; margin-left: 20px; margin-right: 20px; font-size: 18px; font-weight: bold;"/>
+			</form>
+			<div style="margin-top: 3px; margin-bottom: 3px; font-size: 11px; text-align: center;">
+				<b><a onclick="paginaDestino('entrar.html')" id="txtVoltar" class="text-link">Entrar</a> -
+					 <a onClick="paginaDestino('cadastrar.html')" id="txtAlterar" class="text-link">Novo usuário?</a></b>
+			</div>
+		</div>
+		<div id="divAlerta"></div>
+    <script>
+			$(function() {
+				$('input[type=radio][name=rbAlterar]').on('change', function() {
+						paginaDestino('alterarUsuario.html');
+				})
+			});
+
+			$('#txtUsuario').on('keyup',function() {
+				if (((($('#txtUsuario').val().length > 13) && ($('#txtSenha').val().length > 7)) && ($('#txtNovaSenha').val() != ($('#txtSenha').val()))) &&
+					(($('#txtNovaSenha').val() == $('#txtNovaSenhaConfirmacao').val()) && ($('#txtNovaSenha').val().length > 7))) {
+
+						 $('#btnAlterar').prop("disabled", false); }
+
+				else { $('#btnAlterar').prop("disabled", true); }
+			});
+
+			$('#txtSenha').on('keyup',function() {
+				if (((($('#txtUsuario').val().length > 13) && ($('#txtSenha').val().length > 7)) && ($('#txtNovaSenha').val() != ($('#txtSenha').val()))) &&
+					(($('#txtNovaSenha').val() == $('#txtNovaSenhaConfirmacao').val()) && ($('#txtNovaSenha').val().length > 7))) {
+
+						 $('#btnAlterar').prop("disabled", false); }
+
+				else { $('#btnAlterar').prop("disabled", true); }
+			});
+
+			$('#txtNovaSenha').on('keyup',function() {
+				if (((($('#txtUsuario').val().length > 13) && ($('#txtSenha').val().length > 7)) && ($('#txtNovaSenha').val() != ($('#txtSenha').val()))) &&
+					(($('#txtNovaSenha').val() == $('#txtNovaSenhaConfirmacao').val()) && ($('#txtNovaSenha').val().length > 7))) {
+
+						 $('#btnAlterar').prop("disabled", false); }
+
+				else { $('#btnAlterar').prop("disabled", true); }
+			});
+
+			$('#txtNovaSenhaConfirmacao').on('keyup',function() {
+				if (((($('#txtUsuario').val().length > 13) && ($('#txtSenha').val().length > 7)) && ($('#txtNovaSenha').val() != ($('#txtSenha').val()))) &&
+					(($('#txtNovaSenha').val() == $('#txtNovaSenhaConfirmacao').val()) && ($('#txtNovaSenha').val().length > 7))) {
+
+						 $('#btnAlterar').prop("disabled", false); }
+
+				else { $('#btnAlterar').prop("disabled", true); }
+			});
+    </script>
+	</body>
+</html>

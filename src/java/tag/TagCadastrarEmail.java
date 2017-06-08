@@ -5,7 +5,7 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class TagCadastrarEmail extends SimpleTagSupport{
     private Emails emails = new Emails();
     private Email email;
-    private String emailCadastro, senhaEmail, usuario, senhaUsuario, servidorLeitura, servidorSMTP;
+    private String emailCadastro, senhaEmail, usuario, servidorLeitura, servidorSMTP;
     private int portaLeitura, portaSMTP, sslLeitura;
 
     public void setServidorLeitura(String servidorLeitura) {
@@ -32,10 +32,6 @@ public class TagCadastrarEmail extends SimpleTagSupport{
         this.usuario = usuario;
     }
 
-    public void setSenhaUsuario(String senhaUsuario) {
-        this.senhaUsuario = senhaUsuario;
-    }
-
     public void setEmailCadastro(String emailCadastro) {
         this.emailCadastro = emailCadastro;
     }
@@ -48,8 +44,7 @@ public class TagCadastrarEmail extends SimpleTagSupport{
     public void doTag() {
         try {
             email = new Email(emailCadastro, senhaEmail, servidorLeitura, servidorSMTP, portaLeitura, portaSMTP, sslLeitura);
-            Usuario user = new Usuario(usuario, senhaUsuario);
-            if (emails.cadastrar(email, user) != false)
+            if (emails.cadastrar(email, usuario) != false)
                 this.getJspContext().setAttribute("resultado", "cadastrou");
             else
                 this.getJspContext().setAttribute("resultado", "ncadastrou");

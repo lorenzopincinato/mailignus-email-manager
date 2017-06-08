@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Emails {
-    public static boolean cadastrar(Email user, Usuario login) throws Exception {
+    public static boolean cadastrar(Email user, String login) throws Exception {
         if (user == null)
             throw new Exception ("Usuario não fornecido.");
         if (cadastrado(user.getUsuario())) 
@@ -30,7 +30,7 @@ public class Emails {
                 DAOs.getBD().commit        ();
                 DAOs.getBD().clearParameters();
                 
-                int primeiro = getCodCadastro(login.getUsuario());
+                int primeiro = getCodCadastro(login);
                 int segundo = getCodEmail(user.getUsuario());
                 
                 sql = "insert into ConecLoginEmail values("+ primeiro +", "+segundo+")";
@@ -89,13 +89,13 @@ public class Emails {
         try {
             String sql;
             
+            int primeiro = getCodCadastro(user);
+            int segundo = getCodEmail(email);
+            
             sql = "DELETE FROM ConecLoginEmail " +
-                  "WHERE codUsuario = ? and codEmail = ?";
+                  "WHERE codUsuario = "+ primeiro + " and codEmail = " + segundo;
 
             DAOs.getBD().prepareStatement (sql);
-
-            DAOs.getBD().setInt(1, getCodCadastro(user));
-            DAOs.getBD().setInt(2, getCodEmail(email));
 
             DAOs.getBD().executeUpdate ();
             DAOs.getBD().commit        (); 

@@ -5,7 +5,7 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class TagAlterarEmail extends SimpleTagSupport{
     private Emails emails = new Emails();
     private Email email;
-    private String emailCadastro, senhaEmail, usuario, senhaUsuario, servidorLeitura, servidorSMTP;
+    private String emailCadastro, senhaEmail, usuario, servidorLeitura, servidorSMTP;
     private int portaLeitura, portaSMTP, sslLeitura;
 
     public void setEmailCadastro(String emailCadastro) {
@@ -18,10 +18,6 @@ public class TagAlterarEmail extends SimpleTagSupport{
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
-    }
-
-    public void setSenhaUsuario(String senhaUsuario) {
-        this.senhaUsuario = senhaUsuario;
     }
 
     public void setServidorLeitura(String servidorLeitura) {
@@ -45,8 +41,7 @@ public class TagAlterarEmail extends SimpleTagSupport{
         try {
             emails.excluir(emailCadastro, usuario);
             email = new Email (emailCadastro, senhaEmail, servidorLeitura, servidorSMTP, portaLeitura, portaSMTP, sslLeitura);
-            Usuario user = new Usuario(usuario, senhaUsuario);
-            if (emails.cadastrar(email, user) != false)
+            if (emails.cadastrar(email, usuario) != false)
                 this.getJspContext().setAttribute("resultado", "alterou");
             else
                 this.getJspContext().setAttribute("resultado", "nalterou");
