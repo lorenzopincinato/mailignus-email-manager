@@ -12,12 +12,12 @@ import javax.mail.internet.MimeUtility;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class TagConteudoEmail extends SimpleTagSupport{
-    private String emailCadastro, tituloEmail;
+    private String emailCadastroNAOUSUARIO, tituloEmail;
     private Email email;
     private Emails emails = new Emails();
 
-    public void setEmailCadastro(String emailCadastro) {
-        this.emailCadastro = emailCadastro;
+    public void setEmailCadastroNAOUSUARIO(String emailCadastroNAOUSUARIO) {
+        this.emailCadastroNAOUSUARIO = emailCadastroNAOUSUARIO;
     }
 
     public void setTituloEmail(String tituloEmail) {
@@ -30,7 +30,7 @@ public class TagConteudoEmail extends SimpleTagSupport{
         Properties props = new Properties();
         
         try {           
-            email = emails.getEmail(emailCadastro);
+            email = emails.getEmail(emailCadastroNAOUSUARIO);
             
             Session session = Session.getDefaultInstance(props, null);
             Store store;
@@ -39,7 +39,7 @@ public class TagConteudoEmail extends SimpleTagSupport{
                 store = session.getStore(email.getServidorLeitura().substring(0, 4) + "s");
             else
                 store = session.getStore(email.getServidorLeitura().substring(0, 3));
-            store.connect(email.getServidorLeitura(), email.getPortaLeitura(), emailCadastro, email.getSenha());            
+            store.connect(email.getServidorLeitura(), email.getPortaLeitura(), emailCadastroNAOUSUARIO, email.getSenha());            
 
             Folder inbox = store.getFolder("inbox");
             inbox.open(Folder.READ_ONLY);

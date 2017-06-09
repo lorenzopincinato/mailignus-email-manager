@@ -33,9 +33,11 @@
 		<div id="barraTopo" class="div-topo">
 			<img src="images/logo_low_low.png" style="margin: 7.5px; margin-left: 78px; margin-right: 70px"/>
 
-			<button type="button" class="btn btn-default pull-right" style="margin: 10px; margin-left: 0px">
-				<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-			</button>
+                        <form action="sair.jsp">
+                            <button type="submit" class="btn btn-default pull-right" style="margin: 10px; margin-left: 0px">
+                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                            </button>
+                        </form>
 		</div>
 		<div>
 			<div id="barraLateral" class="div-lateral" style="float:left;">
@@ -86,7 +88,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="corpo">Corpo:</label>
-                                    <textarea name="txtMsg" class="form-control" rows="5" id="corpo"></textarea>
+                                    <textarea name="txtMsg" class="form-control" rows="20" id="corpo"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-default">Enviar</button>
                             </form>

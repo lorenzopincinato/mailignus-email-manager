@@ -263,7 +263,7 @@
       <tag-class> tag.TagConteudoEmail </tag-class>
       <body-content> empty </body-content>
       <attribute>
-          <name> emailCadastro </name>
+          <name> emailCadastroNAOUSUARIO </name>
           <type> java.util.String </type>
           <required> true </required>
           <rtexprvalue> true </rtexprvalue>

@@ -53,7 +53,9 @@ public class TagLerCabecalho extends SimpleTagSupport{
             Message[] messages = inbox.getMessages();
             for (int i = messages.length -1; i > 0; i--) {
                array.add("<tr><td>" + MimeUtility.decodeText(messages[i].getFrom()[0] +"") + "</td>");
-               array.add("<td><form action='conteudoEmail.jsp'> <input name='txtTitulo' type='submit' value='" + messages[i].getSubject() + "'/></form></td>");
+               array.add("<td><form action='conteudoEmail.jsp'> <input name='txtEmailCadastro' type='text' value='"+emails.getEmail(emailCadastro).getUsuario()+"' hidden='true' />"  
+                       + "<input name='txtRemetente' type='text' value='"+ MimeUtility.decodeText(messages[i].getFrom()[0] +"")+"' hidden='true' />"
+                       + "<input name='txtTitulo' type='submit' value='" + messages[i].getSubject() + "'/></form></td>");
                array.add("<td>" + messages[i].getReceivedDate() + "</td></tr>");
                //System.out.println("Texto:- " + getTextFromMessage(messages[i]));
             }
